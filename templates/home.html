@@ -9,11 +9,19 @@
 <body>
 {% block content %}
 {% if user.is_authenticated %}
-  <h1> Hi {{ user.username }}! </h1>
+<div class="jumbotron text-center">
+  <h3> Hi {{ user.username }}! </h3>
   <p><a href="{% url 'logout' %}">logout</a></p>
+</div>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+<div class="jumbotron text-center">
+  <h3>You are not logged in</h3>
+  <h3>Login now</h3>
+  <li><a href="admin/">Admin </a></li>
+  <li><a href="{% url 'login' %}">Customer </a></li>
+  <h3> New User ? <a href="{% url 'signup' %}">Signup</a></h3>
+
+</div>
 {% endif %}
 {% endblock content %}
 </body>
