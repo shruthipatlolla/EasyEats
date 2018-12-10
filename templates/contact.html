@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+ {% load static %}
+<html>
+<head>
+
+{% block title %}contact{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+{% block content %}
+<h1>Contact</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>
+</div>
+
+{% endblock content %}
+
+</body>
+</html>
