@@ -1,0 +1,2 @@
+# EasyEats
+Developed using Django
