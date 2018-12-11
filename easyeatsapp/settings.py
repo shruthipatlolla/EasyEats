@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'easyeats.apps.AccountsConfig',
+    'restaurants',
     #'sendemail.apps.SendemailConfig',
 ]
 
@@ -130,3 +131,6 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIA_ROOT = '/Users/shruthipatlolla/Desktop/HCI Project/easyeats/easyeatsapp/media/'
+MEDIA_URL = 'http://127.0.0.1:8000/easyeatsapp/media/'

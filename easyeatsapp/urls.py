@@ -17,8 +17,11 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
+admin.autodiscover()
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url('restaurants/',include('restaurants.urls')),
     url('easyeats/', include('easyeats.urls')),
     url('easyeats/', include('django.contrib.auth.urls')),
     url('', TemplateView.as_view(template_name='home.html'), name='home'),

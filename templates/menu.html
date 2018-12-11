@@ -1,6 +1,31 @@
+
 {% extends 'base.html' %}
 {% block title %}menu{% endblock %}
-
+<body>
 {% block content %}
-<h1>Menu</h1>
+<div id="choisir_restau" data-role="page" data-add-back-btn="true">
+    <div data-role="header">
+    </div>
+    <div data-role="content">
+        <div class="choice_list">
+            <h1> Please choose an Item.</h1>
+            {% if food_list %}
+                <ul data-role="listview" data-inset="true" >
+                    {% for r in food_list %}
+                    <li>
+                        <img src={{ r.picture.url }}/>
+                        <h2>{{ r.name }}</h2>
+                        <h2 class="classement {{r.desc}}">{{r.desc}}</h2>
+                        <h2>{{r.ingredients}}</h2>
+                        <h2>{{r.tools}}</h2>
+                        <button type="submit" class="btn btn-primary">Add</button>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock content %}
+</body>
